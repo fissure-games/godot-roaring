@@ -49,7 +49,6 @@ target_compile_options( ${PROJECT_NAME}
         # Clang and GNU
         $<$<OR:${compiler_is_clang},${compiler_is_gnu}>:
             -Wall
-            -Wcast-align
             -Wctor-dtor-privacy
             -Wextra
             -Wformat=2
@@ -63,6 +62,7 @@ target_compile_options( ${PROJECT_NAME}
 
             # Disable warnings which bleed through from godot-cpp's macros.
             -Wno-unused-parameter
+            -Wno-cast-align
         >
 
         # Clang only
