@@ -12,5 +12,6 @@ cd godot-roaring
 git submodule update --init --recursive
 mkdir build
 cmake -DCMAKE_BUILD_TYPE=Debug .. # or Release
-# Binaries will be in build/GDExtensionTemplate (will be updated to GodotRoaring soon).
+# Make with either `make` or `MSBuild` depending on platform.
+# Binaries will be in build/GodotRoaring
 ```
