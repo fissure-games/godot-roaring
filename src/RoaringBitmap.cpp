@@ -28,7 +28,7 @@ uint32_t RoaringBitmap::get_minimum() const noexcept
 {
     return _bitmap.minimum();
 }
-size_t RoaringBitmap::get_cardinality() const noexcept
+uint64_t RoaringBitmap::get_cardinality() const noexcept
 {
     return _bitmap.cardinality();
 }

@@ -12,7 +12,7 @@ class RoaringBitmap : public godot::RefCounted
     void remove( uint32_t value );
     uint32_t get_maximum() const noexcept;
     uint32_t get_minimum() const noexcept;
-    size_t get_cardinality() const noexcept;
+    uint64_t get_cardinality() const noexcept;
     bool contains( uint32_t value ) const noexcept;
     bool is_empty() const noexcept;
 
