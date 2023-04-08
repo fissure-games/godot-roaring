@@ -26,7 +26,7 @@ namespace
             return;
         }
 
-        godot::UtilityFunctions::print( "Registering extension");
+        godot::UtilityFunctions::print( "Registering extension" );
         godot::ClassDB::register_class<RoaringBitmap>();
     }
 
@@ -66,7 +66,7 @@ extern "C"
             init_obj.register_initializer( initializeExtension );
             init_obj.register_terminator( uninitializeExtension );
             init_obj.set_minimum_library_initialization_level(
-                godot::MODULE_INITIALIZATION_LEVEL_CORE);
+                godot::MODULE_INITIALIZATION_LEVEL_CORE );
 
             return init_obj.init();
         }
