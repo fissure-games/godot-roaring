@@ -6,8 +6,8 @@
 #include "godot_cpp/core/defs.hpp"
 #include "godot_cpp/godot.hpp"
 
-#include "Example.h"
-#include "GDExtensionTemplate.h"
+#include "RoaringBitmap.h"
+#include "godot_cpp/variant/utility_functions.hpp"
 
 /// @file
 /// Register our classes with Godot.
@@ -21,18 +21,13 @@ namespace
     /// @see GDExtensionInit
     void initializeExtension( godot::ModuleInitializationLevel p_level )
     {
-        if ( p_level != godot::MODULE_INITIALIZATION_LEVEL_SCENE )
+        if ( p_level != godot::MODULE_INITIALIZATION_LEVEL_CORE )
         {
             return;
         }
 
-        godot::ClassDB::register_class<ExampleRef>();
-        godot::ClassDB::register_class<ExampleMin>();
-        godot::ClassDB::register_class<Example>();
-        godot::ClassDB::register_class<ExampleVirtual>( true );
-        godot::ClassDB::register_abstract_class<ExampleAbstract>();
-
-        godot::ClassDB::register_class<GDExtensionTemplate>();
+        godot::UtilityFunctions::print( "Registering extension");
+        godot::ClassDB::register_class<RoaringBitmap>();
     }
 
     /// @brief Called by Godot to let us do any cleanup.
@@ -71,7 +66,7 @@ extern "C"
             init_obj.register_initializer( initializeExtension );
             init_obj.register_terminator( uninitializeExtension );
             init_obj.set_minimum_library_initialization_level(
-                godot::MODULE_INITIALIZATION_LEVEL_SCENE );
+                godot::MODULE_INITIALIZATION_LEVEL_CORE);
 
             return init_obj.init();
         }

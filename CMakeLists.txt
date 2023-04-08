@@ -117,6 +117,9 @@ set( GODOT_CPP_SYSTEM_HEADERS ON CACHE BOOL "" FORCE )
 
 add_subdirectory( extern/godot-cpp )
 
+set(ENABLE_ROARING_TESTS OFF)
+add_subdirectory( extern/CRoaring )
+
 set_target_properties( godot-cpp
     PROPERTIES
         CXX_VISIBILITY_PRESET hidden    # visibility needs to be the same as the main library
@@ -125,4 +128,5 @@ set_target_properties( godot-cpp
 target_link_libraries( ${PROJECT_NAME}
     PRIVATE
         godot-cpp
+        roaring
 )

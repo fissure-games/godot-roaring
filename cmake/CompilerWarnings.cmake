@@ -33,8 +33,17 @@ target_compile_options( ${PROJECT_NAME}
             /w14905 # wide string literal cast to 'LPSTR'
             /w14906 # string literal cast to 'LPWSTR'
 
-            # Disable warnings which bleed through from godot-cpp's macros.
-            /wd4100  # unreferenced formal parameter
+            # Disable warnings which we don't plan to fix.
+            /wd4100  # C4100 (unreferenced formal parameter): Doesn't play nice with polymorphism.
+            /wd4127  # C4127 (conditional expression is constant)
+            /wd4201  # C4201 (non-standard nameless struct/union): Only relevant for C89.
+            /wd4244  # C4244 C4245 C4267 (narrowing conversions): Unavoidable at this scale.
+            /wd4245  # C4245 (signed/unsigned mismatch)
+            /wd4267  # C4267 (conversion from 'size_t' to 'type', possible loss of data)
+            /wd4305  # C4305 (truncation): double to float or real_t, too hard to avoid.
+            /wd4514  # C4514 (unreferenced inline function has been removed)
+            /wd4714  # C4714 (function marked as __forceinline not inlined)
+            /wd4820  # C4820 (padding added after construct)
         >
 
         # Clang and GNU

@@ -1,0 +1,11 @@
+[configuration]
+
+entry_symbol = "GDExtensionInit"
+
+[libraries]
+linux.debug.x86_64 = "../build/GDExtensionTemplate/lib/Linux-x86_64/Debug/libGDExtensionTemplate-d.so"
+macos.debug = "../build/GDExtensionTemplate/lib/Darwin-Universal/Debug/libGDExtensionTemplate-d.dylib"
+windows.debug.x86_64 = "../build/GDExtensionTemplate/lib/Windows-AMD64/Debug/GDExtensionTemplate-d.dll"
+linux.release.x86_64 = "../build/GDExtensionTemplate/lib/Linux-x86_64/Release/libGDExtensionTemplate-d.so"
+macos.relase.debug = "../build/GDExtensionTemplate/lib/Darwin-Universal/Release/GDExtensionTemplate.dylib"
+windows.release.x86_64 = "../build/GDExtensionTemplate/lib/Windows-AMD64/Release/GDExtensionTemplate.dll"
